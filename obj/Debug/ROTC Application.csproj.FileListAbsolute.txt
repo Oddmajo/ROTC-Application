@@ -1,0 +1,16 @@
+c:\users\jacob\documents\visual studio 2013\Projects\ROTC Application\ROTC Application\bin\Debug\ROTC Application.exe.config
+c:\users\jacob\documents\visual studio 2013\Projects\ROTC Application\ROTC Application\bin\Debug\ROTC Application.exe
+c:\users\jacob\documents\visual studio 2013\Projects\ROTC Application\ROTC Application\bin\Debug\ROTC Application.pdb
+c:\users\jacob\documents\visual studio 2013\Projects\ROTC Application\ROTC Application\obj\Debug\ROTC Application.csprojResolveAssemblyReference.cache
+c:\users\jacob\documents\visual studio 2013\Projects\ROTC Application\ROTC Application\obj\Debug\ROTC_Application.Properties.Resources.resources
+c:\users\jacob\documents\visual studio 2013\Projects\ROTC Application\ROTC Application\obj\Debug\ROTC Application.csproj.GenerateResource.Cache
+c:\users\jacob\documents\visual studio 2013\Projects\ROTC Application\ROTC Application\obj\Debug\ROTC Application.exe
+c:\users\jacob\documents\visual studio 2013\Projects\ROTC Application\ROTC Application\obj\Debug\ROTC Application.pdb
+C:\Users\Jacob\Documents\Visual Studio 2013\Projects\ROTC Application\ROTC Application\obj\Debug\ROTC_Application.BaseMenu.resources
+C:\Users\Jacob\Documents\Visual Studio 2013\Projects\ROTC Application\ROTC Application\obj\Debug\ROTC_Application.AddPersonMenu.resources
+C:\Users\Jacob\Documents\Visual Studio 2013\Projects\ROTC Application\ROTC Application\obj\Debug\ROTC_Application.RemovePersonMenu.resources
+C:\Users\Jacob\Documents\Visual Studio 2013\Projects\ROTC Application\ROTC Application\obj\Debug\ROTC_Application.AddItemsMenu.resources
+C:\Users\Jacob\Documents\Visual Studio 2013\Projects\ROTC Application\ROTC Application\obj\Debug\ROTC_Application.ManageAssignedGearMenu.resources
+C:\Users\Jacob\Documents\Visual Studio 2013\Projects\ROTC Application\ROTC Application\obj\Debug\ROTC_Application.RemoveItemsMenu.resources
+C:\Users\Jacob\Documents\Visual Studio 2013\Projects\ROTC Application\ROTC Application\obj\Debug\ROTC_Application.ViewInventoryMenu.resources
+C:\Users\Jacob\Documents\Visual Studio 2013\Projects\ROTC Application\ROTC Application\obj\Debug\ROTC_Application.ViewRosterMenu.resources
