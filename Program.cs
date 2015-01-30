@@ -6,6 +6,7 @@ using System.Windows.Forms;
 
 namespace ROTC_Application
 {
+    //NOTE: TAB sequence not working correctly for AddItemsMenu
     static class Program
     {
         /// <summary>
@@ -17,6 +18,7 @@ namespace ROTC_Application
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new BaseMenu());
+
 
             //Testing stuff
 

@@ -21,7 +21,10 @@ namespace ROTC_Application
         {
             //This will need to remove the desired person from the database
             //Currently it will just close the window
-            this.Close();
+            String check = "Are you sure you want to remove " + FirstNameBox.Text + " " + LastNameBox.Text + " from your personnel list?";
+            DialogResult DummyCheck = MessageBox.Show(check,"",MessageBoxButtons.YesNo);
+            if(DummyCheck==DialogResult.Yes)
+                this.Close();
         }
     }
 }

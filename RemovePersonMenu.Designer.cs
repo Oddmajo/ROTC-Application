@@ -30,9 +30,9 @@
         {
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.LastNameBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.FirstNameBox = new System.Windows.Forms.TextBox();
             this.FinishButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -56,12 +56,12 @@
             this.label8.TabIndex = 21;
             this.label8.Text = "First Name";
             // 
-            // textBox5
+            // LastNameBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(16, 60);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(137, 20);
-            this.textBox5.TabIndex = 20;
+            this.LastNameBox.Location = new System.Drawing.Point(16, 60);
+            this.LastNameBox.Name = "LastNameBox";
+            this.LastNameBox.Size = new System.Drawing.Size(137, 20);
+            this.LastNameBox.TabIndex = 20;
             // 
             // label1
             // 
@@ -73,12 +73,12 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Name";
             // 
-            // textBox1
+            // FirstNameBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(16, 34);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(137, 20);
-            this.textBox1.TabIndex = 18;
+            this.FirstNameBox.Location = new System.Drawing.Point(16, 34);
+            this.FirstNameBox.Name = "FirstNameBox";
+            this.FirstNameBox.Size = new System.Drawing.Size(137, 20);
+            this.FirstNameBox.TabIndex = 18;
             // 
             // FinishButton
             // 
@@ -98,9 +98,9 @@
             this.Controls.Add(this.FinishButton);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.LastNameBox);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.FirstNameBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "RemovePersonMenu";
@@ -114,9 +114,9 @@
 
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox LastNameBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox FirstNameBox;
         private System.Windows.Forms.Button FinishButton;
     }
 }

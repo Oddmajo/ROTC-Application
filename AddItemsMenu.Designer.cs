@@ -30,22 +30,22 @@
         {
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.FinishButton1 = new System.Windows.Forms.Button();
+            this.NumberAddedBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.CurrentNumber = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.NameButton = new System.Windows.Forms.RadioButton();
+            this.NSNButton = new System.Windows.Forms.RadioButton();
+            this.LINButton = new System.Windows.Forms.RadioButton();
+            this.ExistingSelect = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.NumberAddedBox2 = new System.Windows.Forms.TextBox();
+            this.NameBox = new System.Windows.Forms.TextBox();
+            this.NSNBox = new System.Windows.Forms.TextBox();
+            this.LINBox = new System.Windows.Forms.TextBox();
+            this.FinishButton2 = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -63,37 +63,38 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.FinishButton1);
+            this.panel1.Controls.Add(this.NumberAddedBox1);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.CurrentNumber);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.radioButton3);
-            this.panel1.Controls.Add(this.radioButton2);
-            this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.NameButton);
+            this.panel1.Controls.Add(this.NSNButton);
+            this.panel1.Controls.Add(this.LINButton);
+            this.panel1.Controls.Add(this.ExistingSelect);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Location = new System.Drawing.Point(13, 13);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(262, 287);
             this.panel1.TabIndex = 0;
             // 
-            // button1
+            // FinishButton1
             // 
-            this.button1.Location = new System.Drawing.Point(47, 225);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(201, 52);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Finish";
-            this.button1.UseVisualStyleBackColor = true;
+            this.FinishButton1.Location = new System.Drawing.Point(47, 225);
+            this.FinishButton1.Name = "FinishButton1";
+            this.FinishButton1.Size = new System.Drawing.Size(201, 52);
+            this.FinishButton1.TabIndex = 5;
+            this.FinishButton1.Text = "Finish";
+            this.FinishButton1.UseVisualStyleBackColor = true;
+            this.FinishButton1.Click += new System.EventHandler(this.FinishButton1_Click);
             // 
-            // textBox1
+            // NumberAddedBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(163, 182);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(37, 24);
-            this.textBox1.TabIndex = 4;
+            this.NumberAddedBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NumberAddedBox1.Location = new System.Drawing.Point(163, 182);
+            this.NumberAddedBox1.Name = "NumberAddedBox1";
+            this.NumberAddedBox1.Size = new System.Drawing.Size(37, 24);
+            this.NumberAddedBox1.TabIndex = 4;
             // 
             // label3
             // 
@@ -105,15 +106,15 @@
             this.label3.TabIndex = 59;
             this.label3.Text = "Number Added:";
             // 
-            // label2
+            // CurrentNumber
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(160, 148);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 18);
-            this.label2.TabIndex = 58;
-            this.label2.Text = "Number";
+            this.CurrentNumber.AutoSize = true;
+            this.CurrentNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CurrentNumber.Location = new System.Drawing.Point(160, 148);
+            this.CurrentNumber.Name = "CurrentNumber";
+            this.CurrentNumber.Size = new System.Drawing.Size(67, 18);
+            this.CurrentNumber.TabIndex = 58;
+            this.CurrentNumber.Text = "Number";
             // 
             // label1
             // 
@@ -126,51 +127,52 @@
             this.label1.Text = "Current Stock:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // radioButton3
+            // NameButton
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(141, 47);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(59, 19);
-            this.radioButton3.TabIndex = 3;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Name";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.NameButton.AutoSize = true;
+            this.NameButton.Location = new System.Drawing.Point(141, 47);
+            this.NameButton.Name = "NameButton";
+            this.NameButton.Size = new System.Drawing.Size(59, 19);
+            this.NameButton.TabIndex = 3;
+            this.NameButton.TabStop = true;
+            this.NameButton.Text = "Name";
+            this.NameButton.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // NSNButton
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(73, 47);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(51, 19);
-            this.radioButton2.TabIndex = 2;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "NSN";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.NSNButton.AutoSize = true;
+            this.NSNButton.Location = new System.Drawing.Point(73, 47);
+            this.NSNButton.Name = "NSNButton";
+            this.NSNButton.Size = new System.Drawing.Size(51, 19);
+            this.NSNButton.TabIndex = 2;
+            this.NSNButton.TabStop = true;
+            this.NSNButton.Text = "NSN";
+            this.NSNButton.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // LINButton
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(7, 47);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(44, 19);
-            this.radioButton1.TabIndex = 1;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "LIN";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.LINButton.AutoSize = true;
+            this.LINButton.Location = new System.Drawing.Point(7, 47);
+            this.LINButton.Name = "LINButton";
+            this.LINButton.Size = new System.Drawing.Size(44, 19);
+            this.LINButton.TabIndex = 1;
+            this.LINButton.TabStop = true;
+            this.LINButton.Text = "LIN";
+            this.LINButton.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // ExistingSelect
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.ExistingSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.ExistingSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ExistingSelect.FormattingEnabled = true;
+            this.ExistingSelect.Items.AddRange(new object[] {
             "Example Item 1",
             "Example Item 2"});
-            this.comboBox1.Location = new System.Drawing.Point(20, 72);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(229, 26);
-            this.comboBox1.TabIndex = 4;
+            this.ExistingSelect.Location = new System.Drawing.Point(20, 72);
+            this.ExistingSelect.Name = "ExistingSelect";
+            this.ExistingSelect.Size = new System.Drawing.Size(229, 26);
+            this.ExistingSelect.TabIndex = 4;
+            this.ExistingSelect.SelectedIndexChanged += new System.EventHandler(this.ExistingSelect_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -184,11 +186,11 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.textBox5);
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.NumberAddedBox2);
+            this.panel2.Controls.Add(this.NameBox);
+            this.panel2.Controls.Add(this.NSNBox);
+            this.panel2.Controls.Add(this.LINBox);
+            this.panel2.Controls.Add(this.FinishButton2);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.label7);
@@ -199,46 +201,47 @@
             this.panel2.Size = new System.Drawing.Size(262, 287);
             this.panel2.TabIndex = 1;
             // 
-            // textBox5
+            // NumberAddedBox2
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(138, 182);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(121, 24);
-            this.textBox5.TabIndex = 9;
+            this.NumberAddedBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NumberAddedBox2.Location = new System.Drawing.Point(138, 182);
+            this.NumberAddedBox2.Name = "NumberAddedBox2";
+            this.NumberAddedBox2.Size = new System.Drawing.Size(121, 24);
+            this.NumberAddedBox2.TabIndex = 9;
             // 
-            // textBox4
+            // NameBox
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(138, 136);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(121, 24);
-            this.textBox4.TabIndex = 8;
+            this.NameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameBox.Location = new System.Drawing.Point(138, 136);
+            this.NameBox.Name = "NameBox";
+            this.NameBox.Size = new System.Drawing.Size(121, 24);
+            this.NameBox.TabIndex = 8;
             // 
-            // textBox3
+            // NSNBox
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(138, 91);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 24);
-            this.textBox3.TabIndex = 7;
+            this.NSNBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NSNBox.Location = new System.Drawing.Point(138, 91);
+            this.NSNBox.Name = "NSNBox";
+            this.NSNBox.Size = new System.Drawing.Size(121, 24);
+            this.NSNBox.TabIndex = 7;
             // 
-            // textBox2
+            // LINBox
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(138, 47);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 24);
-            this.textBox2.TabIndex = 6;
+            this.LINBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LINBox.Location = new System.Drawing.Point(138, 47);
+            this.LINBox.Name = "LINBox";
+            this.LINBox.Size = new System.Drawing.Size(121, 24);
+            this.LINBox.TabIndex = 6;
             // 
-            // button2
+            // FinishButton2
             // 
-            this.button2.Location = new System.Drawing.Point(58, 225);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(201, 52);
-            this.button2.TabIndex = 10;
-            this.button2.Text = "Finish";
-            this.button2.UseVisualStyleBackColor = true;
+            this.FinishButton2.Location = new System.Drawing.Point(58, 225);
+            this.FinishButton2.Name = "FinishButton2";
+            this.FinishButton2.Size = new System.Drawing.Size(201, 52);
+            this.FinishButton2.TabIndex = 10;
+            this.FinishButton2.Text = "Finish";
+            this.FinishButton2.UseVisualStyleBackColor = true;
+            this.FinishButton2.Click += new System.EventHandler(this.FinishButton2_Click);
             // 
             // label9
             // 
@@ -315,25 +318,25 @@
         private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox ExistingSelect;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton NameButton;
+        private System.Windows.Forms.RadioButton NSNButton;
+        private System.Windows.Forms.RadioButton LINButton;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox NumberAddedBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label CurrentNumber;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox NumberAddedBox2;
+        private System.Windows.Forms.TextBox NameBox;
+        private System.Windows.Forms.TextBox NSNBox;
+        private System.Windows.Forms.TextBox LINBox;
+        private System.Windows.Forms.Button FinishButton2;
+        private System.Windows.Forms.Button FinishButton1;
     }
 }

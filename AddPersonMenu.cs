@@ -54,12 +54,16 @@ namespace ROTC_Application
             //This will need to take information from the form and add a person to the database
             //It will need to check for incomplete or incompatable data
             //Currently it will just close the window
+            String check = "Are you sure you want to add " + first + " " + last + " to your personnel list?";
+            DialogResult DummyCheck = MessageBox.Show(check,"",MessageBoxButtons.YesNo);
+            if (DummyCheck == DialogResult.Yes)
+            {
+                MessageBox.Show(first + " " + last + "\nSocSec: xxx-xx-" + socSecurity
+                     + "\nBirthday: " + day + "/" + month + "/" + year + "\nGrade: " + grade + "\nRank: " + rank
+                     + "\nSchool: " + school);
 
-            System.Windows.Forms.MessageBox.Show(first + " " + last + "\nSocSec: xxx-xx-" + socSecurity
-                 + "\n Birthday: " + day + "/" + month + "/" + year + "\nGrade: " + grade + "\nRank: " + rank
-                 + "\nSchool: " + school);
-
-            this.Close();
+                this.Close();
+            }
         }
 
         string CheckYear() 
