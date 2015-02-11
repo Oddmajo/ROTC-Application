@@ -2,6 +2,7 @@
 {
     partial class AddItemsMenu
     {
+        //HI!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         /// <summary>
         /// Required designer variable.
         /// </summary>
