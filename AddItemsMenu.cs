@@ -13,6 +13,12 @@ namespace ROTC_Application
     //NOTE: TAB sequence not working correctly for AddItemsMenu
     public partial class AddItemsMenu : Form
     {
+        private string tempName;
+        private uint tempLIN;
+        private uint tempNSN;
+        private uint tempNumTotal;
+        private uint tempNumLeft;
+
         public AddItemsMenu()
         {
             InitializeComponent();
@@ -47,13 +53,16 @@ namespace ROTC_Application
             //Instead of just checking selected Text, maybe it should check the item itself and include the name designation 
             //no matter what it was selected with
             //
-            String number = NumberAddedBox1.Text;
+            uint number = Convert.ToUInt32(NumberAddedBox1.Text);//catch format exception
 
-            String check = "Are you sure you want to increase the number of " + ExistingSelect.Text + " in your inventory by "
+            String check = "Are you sure you want to increase the number of " + tempNSN + " in your inventory by "
                 + number + "?";
             DialogResult DummyCheck = MessageBox.Show(check, "", MessageBoxButtons.YesNo);
             if (DummyCheck == DialogResult.Yes)
+            {
+                //add to dataBase Using sql
                 this.Close();
+            }
         }
 
         //This function is called when the user clicks the right finish button
@@ -61,19 +70,53 @@ namespace ROTC_Application
         //If so, the form terminates
         private void FinishButton2_Click(object sender, EventArgs e)
         {
-            String numLIN = LINBox.Text;
-            String numNSN = NSNBox.Text;
-            String name = NameBox.Text;
-            String number = NumberAddedBox2.Text;
 
-            String check = "Are you sure you want to add " + number + " of " + name + "(LIN: " + numLIN + ")(NSN: "+ numNSN + ") to your inventory?";
+            String check = "Are you sure you want to add " + tempNumTotal + " of " + tempName + "(LIN: " + tempLIN + ")(NSN: "+ tempNSN + ") to your inventory?";
             DialogResult DummyCheck = MessageBox.Show(check, "", MessageBoxButtons.YesNo);
             if (DummyCheck == DialogResult.Yes)
             {
-                MessageBox.Show("LIN Number: " + numLIN + "\nNSN Number: " + numNSN + "\nName: " + name + "\nQuantity: " + number);
+                //ADD THROUGH SQL TO DATABASE
+                MessageBox.Show("LIN Number: " + tempLIN + "\nNSN Number: " + tempNSN + "\nName: " + tempName + "\nQuantity: " + tempNumTotal);
                 this.Close();
             }
                 
         }
+
+        private void LINBox_TextChanged(object sender, EventArgs e)
+        {
+            tempLIN = Convert.ToUInt32(LINBox.Text);
+        }
+
+        private void NSNBox_TextChanged(object sender, EventArgs e)
+        {
+            tempNSN = Convert.ToUInt32(NSNBox.Text);//catch format exception
+        }
+
+        private void NameBox_TextChanged(object sender, EventArgs e)
+        {
+            tempName = NameBox.Text;
+        }
+
+        private void NumberAddedBox2_TextChanged(object sender, EventArgs e)
+        {
+            tempNumTotal = Convert.ToUInt32(NumberAddedBox2.Text);//catch format exception
+            tempNumLeft = tempNumTotal;
+        }
+
+        private void NSNButton_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NSNButton_CheckedChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void NumberAddedBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
