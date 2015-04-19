@@ -21,7 +21,7 @@ namespace ROTC_Application
         {
 
         }
-        
+
         private void label10_Click(object sender, EventArgs e)
         {
 
@@ -34,50 +34,39 @@ namespace ROTC_Application
 
         private void label11_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void FinishButton_Click(object sender, EventArgs e)
         {
             string first = FirstNameBox.Text;
             string last = LastNameBox.Text;
-            string socSecurity = SSBox.Text;
-            string day = DayBox.Text;
-            string month = MonthBox.Text;
-            string year = YearBox.Text;
-            string grade = CheckYear();
-            string rank = RankBox.Text;
+            uint socSecurity = Convert.ToUInt32(SSBox.Text); //catch format exception
+            uint day = Convert.ToUInt32(DayBox.Text);//catch format exception
+            uint month = Convert.ToUInt32(MonthBox.Text);//catch format exception
+            uint year = Convert.ToUInt32(YearBox.Text);//catch format exception
+            int rank = Convert.ToInt32(RankBox.Text);//catch format exception
             string school = SchoolBox.Text;
 
-            
+
 
             //This will need to take information from the form and add a person to the database
             //It will need to check for incomplete or incompatable data
             //Currently it will just close the window
             String check = "Are you sure you want to add " + first + " " + last + " to your personnel list?";
-            DialogResult DummyCheck = MessageBox.Show(check,"",MessageBoxButtons.YesNo);
+            DialogResult DummyCheck = MessageBox.Show(check, "", MessageBoxButtons.YesNo);
             if (DummyCheck == DialogResult.Yes)
             {
                 MessageBox.Show(first + " " + last + "\nSocSec: xxx-xx-" + socSecurity
-                     + "\nBirthday: " + day + "/" + month + "/" + year + "\nGrade: " + grade + "\nRank: " + rank
-                     + "\nSchool: " + school);
+                     + "\nBirthday: " + day + "/" + month + "/" + year + "\nRank: " + rank + "\nSchool: " + school);
 
                 this.Close();
             }
         }
 
-        string CheckYear() 
+        private void RankBox_TextChanged(object sender, EventArgs e)
         {
-            if (FreshButton.Checked)
-                return FreshButton.Text;
-            if (SophButton.Checked)
-                return SophButton.Text;
-            if (JunButton.Checked)
-                return JunButton.Text;
-            if (SenButton.Checked)
-                return SenButton.Text;
-            return "";            
-        }
 
+        }
     }
 }
