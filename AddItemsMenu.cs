@@ -6,6 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
+using System.Data.Sql;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 namespace ROTC_Application
@@ -75,7 +78,12 @@ namespace ROTC_Application
             DialogResult DummyCheck = MessageBox.Show(check, "", MessageBoxButtons.YesNo);
             if (DummyCheck == DialogResult.Yes)
             {
-                //ADD THROUGH SQL TO DATABASE
+                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Matthew\Documents\myDb.mdf;Integrated Security=True;");
+                con.Open();
+                String myString = "INSERT INTO ITEM (NSN,LIN,Name,NumTotal,NumLeft) VALUES ('" + tempNSN + "','" + tempLIN + "','" + tempName + "','" + tempNumTotal + "','" + tempNumLeft + "')";
+                SqlCommand myCommand = new SqlCommand(myString, con);
+                myCommand.ExecuteReader();
+                con.Close();
                 MessageBox.Show("LIN Number: " + tempLIN + "\nNSN Number: " + tempNSN + "\nName: " + tempName + "\nQuantity: " + tempNumTotal);
                 this.Close();
             }
