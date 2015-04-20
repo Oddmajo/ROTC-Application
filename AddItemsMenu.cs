@@ -39,12 +39,6 @@ namespace ROTC_Application
 
         private void ExistingSelect_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CurrentNumber.Text = "Test";
-            String selected = ExistingSelect.Text;
-            if (selected.Equals("Example Item 1",StringComparison.Ordinal))
-                CurrentNumber.Text = "5";
-            if (selected.Equals("Example Item 2",StringComparison.Ordinal))
-                CurrentNumber.Text = "10";
 
         }
 
@@ -57,13 +51,24 @@ namespace ROTC_Application
             //no matter what it was selected with
             //
             uint number = Convert.ToUInt32(NumberAddedBox1.Text);//catch format exception
-
-            String check = "Are you sure you want to increase the number of " + tempNSN + " in your inventory by "
+            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Matthew\Documents\myDb.mdf;Integrated Security=True;");
+            con.Open();
+            SqlDataReader reader = null;
+            String myString = "SELECT * FROM ITEM WHERE NSN = '" + tempNSN + "'";
+            SqlCommand myCommand = new SqlCommand(myString, con);
+            reader = myCommand.ExecuteReader();
+            reader.Read();
+            tempName = reader["Name"].ToString();
+            label2.Text = tempName;
+            CurrentNumber.Text = (string)reader["NumTotal"];
+            String check = "Are you sure you want to increase the number of " + tempName + " in your inventory by "
                 + number + "?";
             DialogResult DummyCheck = MessageBox.Show(check, "", MessageBoxButtons.YesNo);
             if (DummyCheck == DialogResult.Yes)
             {
                 //add to dataBase Using sql
+                myString = "DECLARE @addvalue int; SET @addvalue = " + number + "; UPDATE ITEM SET NumTotal = NumTotal+@addvalue WHERE NSN = '" + tempNSN + "'";
+                con.Close();
                 this.Close();
             }
         }
@@ -122,6 +127,16 @@ namespace ROTC_Application
         }
 
         private void NumberAddedBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CurrentNumber_Click(object sender, EventArgs e)
         {
 
         }

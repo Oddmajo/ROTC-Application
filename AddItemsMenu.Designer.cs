@@ -37,7 +37,6 @@
             this.CurrentNumber = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.NSNButton = new System.Windows.Forms.RadioButton();
-            this.ExistingSelect = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.NumberAddedBox2 = new System.Windows.Forms.TextBox();
@@ -50,6 +49,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -62,13 +63,14 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.FinishButton1);
             this.panel1.Controls.Add(this.NumberAddedBox1);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.CurrentNumber);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.NSNButton);
-            this.panel1.Controls.Add(this.ExistingSelect);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Location = new System.Drawing.Point(17, 16);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
@@ -118,6 +120,7 @@
             this.CurrentNumber.Size = new System.Drawing.Size(74, 20);
             this.CurrentNumber.TabIndex = 58;
             this.CurrentNumber.Text = "Number";
+            this.CurrentNumber.Click += new System.EventHandler(this.CurrentNumber_Click);
             // 
             // label1
             // 
@@ -143,21 +146,6 @@
             this.NSNButton.Text = "NSN";
             this.NSNButton.UseVisualStyleBackColor = true;
             this.NSNButton.CheckedChanged += new System.EventHandler(this.NSNButton_CheckedChanged_1);
-            // 
-            // ExistingSelect
-            // 
-            this.ExistingSelect.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.ExistingSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExistingSelect.FormattingEnabled = true;
-            this.ExistingSelect.Items.AddRange(new object[] {
-            "Example Item 1",
-            "Example Item 2"});
-            this.ExistingSelect.Location = new System.Drawing.Point(27, 89);
-            this.ExistingSelect.Margin = new System.Windows.Forms.Padding(4);
-            this.ExistingSelect.Name = "ExistingSelect";
-            this.ExistingSelect.Size = new System.Drawing.Size(304, 28);
-            this.ExistingSelect.TabIndex = 4;
-            this.ExistingSelect.SelectedIndexChanged += new System.EventHandler(this.ExistingSelect_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -293,6 +281,24 @@
             this.label4.TabIndex = 62;
             this.label4.Text = "New Items";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(27, 86);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(188, 22);
+            this.textBox1.TabIndex = 60;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))));
+            this.label2.Location = new System.Drawing.Point(27, 130);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 20);
+            this.label2.TabIndex = 61;
+            this.label2.Text = "Item";
+            // 
             // AddItemsMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -319,7 +325,6 @@
         private System.IO.FileSystemWatcher fileSystemWatcher1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox ExistingSelect;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.RadioButton NSNButton;
         private System.Windows.Forms.Label label9;
@@ -337,5 +342,7 @@
         private System.Windows.Forms.TextBox LINBox;
         private System.Windows.Forms.Button FinishButton2;
         private System.Windows.Forms.Button FinishButton1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label2;
     }
 }
