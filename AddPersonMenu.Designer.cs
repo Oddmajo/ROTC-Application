@@ -58,6 +58,7 @@
             this.FirstNameBox.Name = "FirstNameBox";
             this.FirstNameBox.Size = new System.Drawing.Size(181, 22);
             this.FirstNameBox.TabIndex = 1;
+            this.FirstNameBox.TextChanged += new System.EventHandler(this.FirstNameBox_TextChanged);
             // 
             // label1
             // 
@@ -138,7 +139,6 @@
             this.RankBox.Name = "RankBox";
             this.RankBox.Size = new System.Drawing.Size(32, 22);
             this.RankBox.TabIndex = 11;
-            this.RankBox.TextChanged += new System.EventHandler(this.RankBox_TextChanged);
             // 
             // label11
             // 
