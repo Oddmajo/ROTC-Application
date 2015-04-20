@@ -64,10 +64,12 @@ namespace ROTC_Application
             String check = "Are you sure you want to increase the number of " + tempName + " in your inventory by "
                 + number + "?";
             reader.Close();
+            con.Close();
             DialogResult DummyCheck = MessageBox.Show(check, "", MessageBoxButtons.YesNo);
             if (DummyCheck == DialogResult.Yes)
             {
                 //add to dataBase Using sql
+                con.Open();
                 myString = "DECLARE @addvalue int; SET @addvalue = " + number + "; UPDATE ITEM SET NumTotal = NumTotal+@addvalue, NumLeft = NumLeft+@addvalue WHERE NSN = '" + tempNSN + "'";
                 myCommand = new SqlCommand(myString, con);
                 myCommand.ExecuteReader();
