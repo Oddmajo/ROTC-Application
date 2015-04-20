@@ -26,5 +26,10 @@ namespace ROTC_Application
             if(DummyCheck==DialogResult.Yes)
                 this.Close();
         }
+
+        private void RemovePersonMenu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
