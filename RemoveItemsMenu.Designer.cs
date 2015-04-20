@@ -102,6 +102,7 @@
             this.NumberRemovedSelect.Name = "NumberRemovedSelect";
             this.NumberRemovedSelect.Size = new System.Drawing.Size(85, 22);
             this.NumberRemovedSelect.TabIndex = 66;
+            this.NumberRemovedSelect.ValueChanged += new System.EventHandler(this.NumberRemovedSelect_ValueChanged);
             // 
             // label2
             // 
@@ -139,6 +140,7 @@
             this.MaximizeBox = false;
             this.Name = "RemoveItemsMenu";
             this.Text = "Remove Items";
+            this.Load += new System.EventHandler(this.RemoveItemsMenu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.NumberRemovedSelect)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
