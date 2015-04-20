@@ -17,19 +17,3 @@ C:\Users\Jacob\Documents\Visual Studio 2013\Projects\ROTC Application\ROTC Appli
 C:\Users\Matthew\Documents\GitHub\ROTC-Application\bin\Debug\ROTC Application.exe.config
 C:\Users\Matthew\Documents\GitHub\ROTC-Application\obj\Debug\ROTC Application.exe
 C:\Users\Matthew\Documents\GitHub\ROTC-Application\obj\Debug\ROTC Application.pdb
-C:\Users\Jacob\Documents\GitHub\ROTC-Application\bin\Debug\ROTC Application.exe.config
-C:\Users\Jacob\Documents\GitHub\ROTC-Application\obj\Debug\ROTC Application.exe
-C:\Users\Jacob\Documents\GitHub\ROTC-Application\obj\Debug\ROTC Application.pdb
-C:\Users\Jacob\Documents\GitHub\ROTC-Application\bin\Debug\ROTC Application.exe
-C:\Users\Jacob\Documents\GitHub\ROTC-Application\bin\Debug\ROTC Application.pdb
-C:\Users\Jacob\Documents\GitHub\ROTC-Application\obj\Debug\ROTC Application.csprojResolveAssemblyReference.cache
-C:\Users\Jacob\Documents\GitHub\ROTC-Application\obj\Debug\ROTC_Application.AddItemsMenu.resources
-C:\Users\Jacob\Documents\GitHub\ROTC-Application\obj\Debug\ROTC_Application.AddPersonMenu.resources
-C:\Users\Jacob\Documents\GitHub\ROTC-Application\obj\Debug\ROTC_Application.BaseMenu.resources
-C:\Users\Jacob\Documents\GitHub\ROTC-Application\obj\Debug\ROTC_Application.ManageAssignedGearMenu.resources
-C:\Users\Jacob\Documents\GitHub\ROTC-Application\obj\Debug\ROTC_Application.Properties.Resources.resources
-C:\Users\Jacob\Documents\GitHub\ROTC-Application\obj\Debug\ROTC_Application.RemoveItemsMenu.resources
-C:\Users\Jacob\Documents\GitHub\ROTC-Application\obj\Debug\ROTC_Application.RemovePersonMenu.resources
-C:\Users\Jacob\Documents\GitHub\ROTC-Application\obj\Debug\ROTC_Application.ViewInventoryMenu.resources
-C:\Users\Jacob\Documents\GitHub\ROTC-Application\obj\Debug\ROTC_Application.ViewRosterMenu.resources
-C:\Users\Jacob\Documents\GitHub\ROTC-Application\obj\Debug\ROTC Application.csproj.GenerateResource.Cache
