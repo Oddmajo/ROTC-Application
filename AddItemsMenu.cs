@@ -37,11 +37,6 @@ namespace ROTC_Application
 
         }
 
-        private void ExistingSelect_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         //This function is called when the user clicks the left finish button
         //It checks to make sure the user has selected the correct items and given the correct number
         //If so, the form terminates
