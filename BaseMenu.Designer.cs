@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseMenu));
             this.ViewInventoryButton = new System.Windows.Forms.Button();
             this.RemoveItemsButton = new System.Windows.Forms.Button();
             this.AddItemsButton = new System.Windows.Forms.Button();
@@ -123,7 +124,7 @@
             this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label2.Location = new System.Drawing.Point(27, 158);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(168, 22);
+            this.label2.Size = new System.Drawing.Size(152, 20);
             this.label2.TabIndex = 16;
             this.label2.Text = "Manage Inventory";
             // 
@@ -134,7 +135,7 @@
             this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.label1.Location = new System.Drawing.Point(27, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(176, 22);
+            this.label1.Size = new System.Drawing.Size(158, 20);
             this.label1.TabIndex = 15;
             this.label1.Text = "Manage Personnel";
             // 
@@ -153,6 +154,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "BaseMenu";
             this.Text = "ROTC Personnel and Inventory Management";

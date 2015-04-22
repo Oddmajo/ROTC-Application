@@ -59,7 +59,7 @@ namespace ROTC_Application
             reader = myCommand.ExecuteReader();
             reader.Read();
             tempName = reader["Name"].ToString();
-            label2.Text = tempName;
+            CurrentItem.Text = tempName;
             CurrentNumber.Text = (string)reader["NumTotal"];
             String check = "Are you sure you want to increase the number of " + tempName + " in your inventory by "
                 + number + "?";
@@ -107,7 +107,7 @@ namespace ROTC_Application
 
         private void NSNBox_TextChanged(object sender, EventArgs e)
         {
-            tempNSN = Convert.ToUInt32(NSNBox.Text);//catch format exception
+            tempNSN = Convert.ToUInt32(NSNBox2.Text);//catch format exception
         }
 
         private void NameBox_TextChanged(object sender, EventArgs e)
@@ -119,16 +119,6 @@ namespace ROTC_Application
         {
             tempNumTotal = Convert.ToUInt32(NumberAddedBox2.Text);//catch format exception
             tempNumLeft = tempNumTotal;
-        }
-
-        private void NSNButton_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NSNButton_CheckedChanged_1(object sender, EventArgs e)
-        {
-
         }
 
         private void NumberAddedBox1_TextChanged(object sender, EventArgs e)
@@ -144,6 +134,26 @@ namespace ROTC_Application
         private void CurrentNumber_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void NSNBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void NSNBox1_Enter(object sender, EventArgs e)
+        {
+            ActiveForm.AcceptButton = SearchButton;
+        }
+
+        private void SearchButton_Click(object sender, EventArgs e)
+        {
+            CurrentItem.Text = "You changed";
+        }
+
+        private void NSNBox1_Leave(object sender, EventArgs e)
+        {
+            ActiveForm.AcceptButton = null;
         }
 
     }
