@@ -57,7 +57,7 @@ namespace ROTC_Application
             OleDbCommand myCommand = new OleDbCommand(myString, con);
             reader = myCommand.ExecuteReader();
             reader.Read();
-            tempName = reader["Name"].ToString();
+            tempName = reader["Namme"].ToString();
             CurrentItem.Text = tempName;
             CurrentNumber.Text = (string)reader["NumTotal"];
             String check = "Are you sure you want to increase the number of " + tempName + " in your inventory by "
@@ -89,7 +89,7 @@ namespace ROTC_Application
             {
                 OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=rotcDB.accdb;Persist Security Info=True");
                 con.Open();
-                String myString = "INSERT INTO ITEM (NSN,LIN,Name,NumTotal,NumLeft) VALUES ('" + tempNSN + "','" + tempLIN + "','" + tempName + "','" + tempNumTotal + "','" + tempNumLeft + "')";
+                String myString = "INSERT INTO ITEM (NSN,LIN,Namme,NumTotal,NumLeft) VALUES ('" + tempNSN + "','" + tempLIN + "','" + tempName + "','" + tempNumTotal + "','" + tempNumLeft + "')";
                 OleDbCommand myCommand = new OleDbCommand(myString, con);
                 myCommand.ExecuteReader();
                 con.Close();
