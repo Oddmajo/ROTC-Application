@@ -91,7 +91,7 @@ namespace ROTC_Application
                 con.Open();
                 String myString = "INSERT INTO ITEM (NSN,LIN,Namme,NumTotal,NumLeft) VALUES ('" + tempNSN + "','" + tempLIN + "','" + tempName + "','" + tempNumTotal + "','" + tempNumLeft + "')";
                 OleDbCommand myCommand = new OleDbCommand(myString, con);
-                myCommand.ExecuteReader();
+                myCommand.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("LIN Number: " + tempLIN + "\nNSN Number: " + tempNSN + "\nName: " + tempName + "\nQuantity: " + tempNumTotal);
                 this.Close();
