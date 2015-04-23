@@ -7,8 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
-using System.Data.Sql;
-using System.Data.SqlClient;
+using System.Data.OleDb;
 using System.Windows.Forms;
 
 namespace ROTC_Application
@@ -51,11 +50,11 @@ namespace ROTC_Application
             //no matter what it was selected with
             //
             uint number = Convert.ToUInt32(NumberAddedBox1.Text);//catch format exception
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Matthew\Documents\myDb.mdf;Integrated Security=True;");
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=rotcDB.accdb;Persist Security Info=True");
             con.Open();
-            SqlDataReader reader = null;
+            OleDbDataReader reader = null;
             String myString = "SELECT * FROM ITEM WHERE NSN = '" + tempNSN + "'";
-            SqlCommand myCommand = new SqlCommand(myString, con);
+            OleDbCommand myCommand = new OleDbCommand(myString, con);
             reader = myCommand.ExecuteReader();
             reader.Read();
             tempName = reader["Name"].ToString();
@@ -71,7 +70,7 @@ namespace ROTC_Application
                 //add to dataBase Using sql
                 con.Open();
                 myString = "DECLARE @addvalue int; SET @addvalue = " + number + "; UPDATE ITEM SET NumTotal = NumTotal+@addvalue, NumLeft = NumLeft+@addvalue WHERE NSN = '" + tempNSN + "'";
-                myCommand = new SqlCommand(myString, con);
+                myCommand = new OleDbCommand(myString, con);
                 myCommand.ExecuteReader();
                 con.Close();
                 this.Close();
@@ -88,10 +87,10 @@ namespace ROTC_Application
             DialogResult DummyCheck = MessageBox.Show(check, "", MessageBoxButtons.YesNo);
             if (DummyCheck == DialogResult.Yes)
             {
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Matthew\Documents\myDb.mdf;Integrated Security=True;");
+                OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=rotcDB.accdb;Persist Security Info=True");
                 con.Open();
                 String myString = "INSERT INTO ITEM (NSN,LIN,Name,NumTotal,NumLeft) VALUES ('" + tempNSN + "','" + tempLIN + "','" + tempName + "','" + tempNumTotal + "','" + tempNumLeft + "')";
-                SqlCommand myCommand = new SqlCommand(myString, con);
+                OleDbCommand myCommand = new OleDbCommand(myString, con);
                 myCommand.ExecuteReader();
                 con.Close();
                 MessageBox.Show("LIN Number: " + tempLIN + "\nNSN Number: " + tempNSN + "\nName: " + tempName + "\nQuantity: " + tempNumTotal);
