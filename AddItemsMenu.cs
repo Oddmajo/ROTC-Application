@@ -57,7 +57,7 @@ namespace ROTC_Application
             OleDbCommand myCommand = new OleDbCommand(myString, con);
             reader = myCommand.ExecuteReader();
             reader.Read();
-            tempName = reader["Namme"].ToString();
+            tempName = reader["Name"].ToString();
             CurrentItem.Text = tempName;
             CurrentNumber.Text = (string)reader["NumTotal"];
             String check = "Are you sure you want to increase the number of " + tempName + " in your inventory by "
@@ -145,6 +145,9 @@ namespace ROTC_Application
             ActiveForm.AcceptButton = SearchButton;
         }
 
+
+        //Needs to search Database for the item matching the NSN number in NSNBox1
+        //It then needs to change CurrentItem and CurrentNumber to reflect the name and # of recovered item
         private void SearchButton_Click(object sender, EventArgs e)
         {
             CurrentItem.Text = "You changed";

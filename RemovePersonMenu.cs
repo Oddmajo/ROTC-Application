@@ -17,6 +17,10 @@ namespace ROTC_Application
             InitializeComponent();
         }
 
+        //-----------------------------------------------------------TODO
+        //NEEDS TO BE UPDATED TO MICROSOFT ACCESS DATABASE
+        //      NEEDS DATABASE QUERY 
+        //-----------------------------------------------------------TODO
         private void FinishButton_Click(object sender, EventArgs e)
         {
             //This will need to remove the desired person from the database

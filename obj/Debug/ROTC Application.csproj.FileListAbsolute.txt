@@ -33,3 +33,4 @@ C:\Users\Jacob\Documents\GitHub\ROTC-Application\obj\Debug\ROTC_Application.Remo
 C:\Users\Jacob\Documents\GitHub\ROTC-Application\obj\Debug\ROTC_Application.ViewInventoryMenu.resources
 C:\Users\Jacob\Documents\GitHub\ROTC-Application\obj\Debug\ROTC_Application.ViewRosterMenu.resources
 C:\Users\Jacob\Documents\GitHub\ROTC-Application\obj\Debug\ROTC Application.csproj.GenerateResource.Cache
+C:\Users\Jacob\Documents\GitHub\ROTC-Application\bin\Debug\rotcDB.accdb

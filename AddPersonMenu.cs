@@ -52,7 +52,9 @@ namespace ROTC_Application
             string school = SchoolBox.Text;
 
 
-
+            //-----------------------------------------------------------TODO
+            //NEEDS TO BE UPDATED TO MICROSOFT ACCESS DATABASE
+            //-----------------------------------------------------------TODO
             //This will need to take information from the form and add a person to the database
             //It will need to check for incomplete or incompatable data
             //Currently it will just close the window

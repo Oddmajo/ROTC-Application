@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddItemsMenu));
             this.fileSystemWatcher1 = new System.IO.FileSystemWatcher();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.SearchButton = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.CurrentItem = new System.Windows.Forms.Label();
             this.NSNBox1 = new System.Windows.Forms.TextBox();
@@ -52,8 +54,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.SearchButton = new System.Windows.Forms.Button();
-            this.label11 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -82,6 +82,26 @@
             this.panel1.Size = new System.Drawing.Size(262, 287);
             this.panel1.TabIndex = 0;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(31, 115);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(115, 17);
+            this.label11.TabIndex = 67;
+            this.label11.Text = "Inventory Item:";
+            // 
+            // SearchButton
+            // 
+            this.SearchButton.Location = new System.Drawing.Point(163, 73);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(85, 26);
+            this.SearchButton.TabIndex = 66;
+            this.SearchButton.Text = "Search";
+            this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
@@ -96,7 +116,7 @@
             // 
             this.CurrentItem.AutoSize = true;
             this.CurrentItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
-            this.CurrentItem.Location = new System.Drawing.Point(160, 115);
+            this.CurrentItem.Location = new System.Drawing.Point(151, 115);
             this.CurrentItem.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.CurrentItem.Name = "CurrentItem";
             this.CurrentItem.Size = new System.Drawing.Size(38, 17);
@@ -147,7 +167,7 @@
             // 
             this.CurrentNumber.AutoSize = true;
             this.CurrentNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CurrentNumber.Location = new System.Drawing.Point(160, 148);
+            this.CurrentNumber.Location = new System.Drawing.Point(151, 148);
             this.CurrentNumber.Name = "CurrentNumber";
             this.CurrentNumber.Size = new System.Drawing.Size(64, 17);
             this.CurrentNumber.TabIndex = 58;
@@ -286,26 +306,6 @@
             this.label4.Size = new System.Drawing.Size(93, 20);
             this.label4.TabIndex = 62;
             this.label4.Text = "New Items";
-            // 
-            // SearchButton
-            // 
-            this.SearchButton.Location = new System.Drawing.Point(163, 73);
-            this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(85, 26);
-            this.SearchButton.TabIndex = 66;
-            this.SearchButton.Text = "Search";
-            this.SearchButton.UseVisualStyleBackColor = true;
-            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(31, 115);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(115, 17);
-            this.label11.TabIndex = 67;
-            this.label11.Text = "Inventory Item:";
             // 
             // AddItemsMenu
             // 

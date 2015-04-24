@@ -30,7 +30,9 @@ namespace ROTC_Application
         {
 
         }
-
+        //-----------------------------------------------------------TODO
+        //NEEDS TO BE UPDATED TO MICROSOFT ACCESS DATABASE
+        //-----------------------------------------------------------TODO
         private void FinishButton_Click(object sender, EventArgs e)
         {
             uint number = Convert.ToUInt32(NumberRemovedSelect.Text);//catch format exception
