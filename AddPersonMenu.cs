@@ -7,8 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
-using System.Data.Sql;
-using System.Data.SqlClient;
+using System.Data.OleDb;
 using System.Windows.Forms;
 
 namespace ROTC_Application
@@ -63,10 +62,10 @@ namespace ROTC_Application
             if (DummyCheck == DialogResult.Yes)
             {
                 DateTime myDateTime = new DateTime(year, month, day);
-                SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Matthew\Documents\myDb.mdf;Integrated Security=True;");
+                OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=rotcDB.accdb;Persist Security Info=True");
                 con.Open();
                 String myString = "INSERT INTO PERSON (LName,FName,School,MsNum,SOC,DOB) VALUES ('" + last + "','" + first + "','" + school + "','" + rank + "','" + socSecurity + "','" + myDateTime + "')";
-                SqlCommand myCommand = new SqlCommand(myString, con);
+                OleDbCommand myCommand = new OleDbCommand(myString, con);
                 myCommand.ExecuteReader();
                 con.Close();
                 MessageBox.Show(first + " " + last + "\nSocSec: xxx-xx-" + socSecurity
