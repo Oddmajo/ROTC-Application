@@ -53,15 +53,15 @@ namespace ROTC_Application
             OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=rotcDB.accdb;Persist Security Info=True");
             con.Open();
             OleDbDataReader reader = null;
-            String myString = "SELECT * FROM ITEM WHERE NSN = '" + tempNSN + "'";
+            String myString = "SELECT * FROM ITEM WHERE NSN = '" + NSNBox1.Text + "'";
             OleDbCommand myCommand = new OleDbCommand(myString, con);
             reader = myCommand.ExecuteReader();
             reader.Read();
             tempName = reader["Name"].ToString();
-            CurrentItem.Text = tempName;
+            CurrentItem.Text = NameBox.Text;
             CurrentNumber.Text = (string)reader["NumTotal"];
-            String check = "Are you sure you want to increase the number of " + tempName + " in your inventory by "
-                + number + "?";
+            String check = "Are you sure you want to increase the number of " + NameBox.Text + " in your inventory by "
+                + NumberAddedBox1.Text + "?";
             reader.Close();
             con.Close();
             DialogResult DummyCheck = MessageBox.Show(check, "", MessageBoxButtons.YesNo);
@@ -69,7 +69,7 @@ namespace ROTC_Application
             {
                 //add to dataBase Using sql
                 con.Open();
-                myString = "DECLARE @addvalue int; SET @addvalue = " + number + "; UPDATE ITEM SET NumTotal = NumTotal+@addvalue, NumLeft = NumLeft+@addvalue WHERE NSN = '" + tempNSN + "'";
+                myString = "DECLARE @addvalue int; SET @addvalue = " + NumberAddedBox1.Text + "; UPDATE ITEM SET NumTotal = NumTotal+@addvalue, NumLeft = NumLeft+@addvalue WHERE NSN = '" + NSNBox1.Text + "'";
                 myCommand = new OleDbCommand(myString, con);
                 myCommand.ExecuteReader();
                 con.Close();

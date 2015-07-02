@@ -7,8 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
-using System.Data.Sql;
-using System.Data.SqlClient;
+using System.Data.OleDb;
 using System.Windows.Forms;
 
 namespace ROTC_Application
@@ -36,11 +35,11 @@ namespace ROTC_Application
         private void FinishButton_Click(object sender, EventArgs e)
         {
             uint number = Convert.ToUInt32(NumberRemovedSelect.Text);//catch format exception
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\Matthew\Documents\myDb.mdf;Integrated Security=True;");
+            OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=rotcDB.accdb;Persist Security Info=True");
             con.Open();
-            SqlDataReader reader = null;
+            OleDbDataReader reader = null;
             String myString = "SELECT * FROM ITEM WHERE NSN = '" + tempNSN + "'";
-            SqlCommand myCommand = new SqlCommand(myString, con);
+            OleDbCommand myCommand = new OleDbCommand(myString, con);
             reader = myCommand.ExecuteReader();
             reader.Read();
             tempName = reader["Name"].ToString();
@@ -57,7 +56,7 @@ namespace ROTC_Application
                 //subtract number from numLeft and NumTotal in database
                 con.Open();
                 myString = "DECLARE @subvalue int; SET @subvalue = " + number + "; UPDATE ITEM SET NumTotal = NumTotal-@subvalue, NumLeft = NumLeft-@subvalue WHERE NSN = '" + tempNSN + "'";
-                myCommand = new SqlCommand(myString, con);
+                myCommand = new OleDbCommand(myString, con);
                 myCommand.ExecuteReader();
                 con.Close();
                 this.Close();
