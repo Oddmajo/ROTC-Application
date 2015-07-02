@@ -83,13 +83,13 @@ namespace ROTC_Application
         private void FinishButton2_Click(object sender, EventArgs e)
         {
 
-            String check = "Are you sure you want to add " + tempNumTotal + " of " + tempName + "(LIN: " + tempLIN + ")(NSN: "+ tempNSN + ") to your inventory?";
+            String check = "Are you sure you want to add " + NumberAddedBox2.Text + " of " + NameBox.Text + "(LIN: " + LINBox.Text + ")(NSN: "+ NSNBox2.Text + ") to your inventory?";
             DialogResult DummyCheck = MessageBox.Show(check, "", MessageBoxButtons.YesNo);
             if (DummyCheck == DialogResult.Yes)
             {
                 OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=rotcDB.accdb;Persist Security Info=True");
                 con.Open();
-                String myString = "INSERT INTO ITEM (NSN,LIN,Namme,NumTotal,NumLeft) VALUES ('" + tempNSN + "','" + tempLIN + "','" + tempName + "','" + tempNumTotal + "','" + tempNumLeft + "')";
+                String myString = "INSERT INTO ITEM (NSN,LIN,Namme,NumTotal,NumLeft) VALUES ('" + NSNBox2.Text + "','" + LINBox.Text + "','" + NameBox.Text + "','" + NumberAddedBox2.Text + "','" + NumberAddedBox2.Text + "')";
                 OleDbCommand myCommand = new OleDbCommand(myString, con);
                 myCommand.ExecuteNonQuery();
                 con.Close();
@@ -99,46 +99,7 @@ namespace ROTC_Application
                 
         }
 
-        private void LINBox_TextChanged(object sender, EventArgs e)
-        {
-            tempLIN = Convert.ToUInt32(LINBox.Text);
-        }
-
-        private void NSNBox_TextChanged(object sender, EventArgs e)
-        {
-            tempNSN = Convert.ToUInt32(NSNBox2.Text);//catch format exception
-        }
-
-        private void NameBox_TextChanged(object sender, EventArgs e)
-        {
-            tempName = NameBox.Text;
-        }
-
-        private void NumberAddedBox2_TextChanged(object sender, EventArgs e)
-        {
-            tempNumTotal = Convert.ToUInt32(NumberAddedBox2.Text);//catch format exception
-            tempNumLeft = tempNumTotal;
-        }
-
-        private void NumberAddedBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void CurrentNumber_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NSNBox1_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
+       
 
         private void NSNBox1_Enter(object sender, EventArgs e)
         {
@@ -156,6 +117,11 @@ namespace ROTC_Application
         private void NSNBox1_Leave(object sender, EventArgs e)
         {
             ActiveForm.AcceptButton = null;
+        }
+
+        private void LINBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
     }
