@@ -78,7 +78,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Location = new System.Drawing.Point(17, 16);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(349, 353);
             this.panel1.TabIndex = 0;
@@ -97,7 +97,7 @@
             // SearchButton
             // 
             this.SearchButton.Location = new System.Drawing.Point(217, 90);
-            this.SearchButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SearchButton.Margin = new System.Windows.Forms.Padding(4);
             this.SearchButton.Name = "SearchButton";
             this.SearchButton.Size = new System.Drawing.Size(113, 32);
             this.SearchButton.TabIndex = 66;
@@ -139,7 +139,7 @@
             // FinishButton1
             // 
             this.FinishButton1.Location = new System.Drawing.Point(63, 277);
-            this.FinishButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FinishButton1.Margin = new System.Windows.Forms.Padding(4);
             this.FinishButton1.Name = "FinishButton1";
             this.FinishButton1.Size = new System.Drawing.Size(268, 64);
             this.FinishButton1.TabIndex = 5;
@@ -151,7 +151,7 @@
             // 
             this.NumberAddedBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NumberAddedBox1.Location = new System.Drawing.Point(217, 224);
-            this.NumberAddedBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.NumberAddedBox1.Margin = new System.Windows.Forms.Padding(4);
             this.NumberAddedBox1.Name = "NumberAddedBox1";
             this.NumberAddedBox1.Size = new System.Drawing.Size(48, 26);
             this.NumberAddedBox1.TabIndex = 4;
@@ -200,6 +200,7 @@
             this.label6.Size = new System.Drawing.Size(146, 25);
             this.label6.TabIndex = 52;
             this.label6.Text = "Existing Items";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // panel2
             // 
@@ -214,7 +215,7 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Location = new System.Drawing.Point(375, 16);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(349, 353);
             this.panel2.TabIndex = 1;
@@ -223,7 +224,7 @@
             // 
             this.NumberAddedBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NumberAddedBox2.Location = new System.Drawing.Point(184, 224);
-            this.NumberAddedBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.NumberAddedBox2.Margin = new System.Windows.Forms.Padding(4);
             this.NumberAddedBox2.Name = "NumberAddedBox2";
             this.NumberAddedBox2.Size = new System.Drawing.Size(160, 26);
             this.NumberAddedBox2.TabIndex = 9;
@@ -232,7 +233,7 @@
             // 
             this.NameBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NameBox.Location = new System.Drawing.Point(184, 167);
-            this.NameBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.NameBox.Margin = new System.Windows.Forms.Padding(4);
             this.NameBox.Name = "NameBox";
             this.NameBox.Size = new System.Drawing.Size(160, 26);
             this.NameBox.TabIndex = 8;
@@ -241,7 +242,7 @@
             // 
             this.NSNBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NSNBox2.Location = new System.Drawing.Point(184, 112);
-            this.NSNBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.NSNBox2.Margin = new System.Windows.Forms.Padding(4);
             this.NSNBox2.Name = "NSNBox2";
             this.NSNBox2.Size = new System.Drawing.Size(160, 26);
             this.NSNBox2.TabIndex = 7;
@@ -250,7 +251,7 @@
             // 
             this.LINBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LINBox.Location = new System.Drawing.Point(184, 58);
-            this.LINBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.LINBox.Margin = new System.Windows.Forms.Padding(4);
             this.LINBox.Name = "LINBox";
             this.LINBox.Size = new System.Drawing.Size(160, 26);
             this.LINBox.TabIndex = 6;
@@ -259,7 +260,7 @@
             // FinishButton2
             // 
             this.FinishButton2.Location = new System.Drawing.Point(55, 277);
-            this.FinishButton2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FinishButton2.Margin = new System.Windows.Forms.Padding(4);
             this.FinishButton2.Name = "FinishButton2";
             this.FinishButton2.Size = new System.Drawing.Size(268, 64);
             this.FinishButton2.TabIndex = 10;
@@ -331,7 +332,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "AddItemsMenu";
             this.Text = "Add Items";

@@ -124,5 +124,10 @@ namespace ROTC_Application
 
         }
 
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
