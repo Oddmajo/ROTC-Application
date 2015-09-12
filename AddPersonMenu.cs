@@ -65,6 +65,10 @@ namespace ROTC_Application
                 try
                 {
                     myDateTime = new DateTime(year, month, day);
+                    if (rank < 1 || rank > 5)
+                    {
+                        throw new ArgumentOutOfRangeException(null, "MS level out of range");
+                    }
                     OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=rotcDB.accdb;Persist Security Info=True");
                     con.Open();
                     String myString = "INSERT INTO PERSON (LName,FName,School,MsNum,SOC,DOB) VALUES ('" + last + "','" + first + "','" + school + "','" + rank + "','" + socSecurity + "','" + myDateTime + "')";
@@ -76,9 +80,23 @@ namespace ROTC_Application
 
                     this.Close();
                 }
-                catch (ArgumentOutOfRangeException)
+
+                //STILL BROKEN CANT CATCH ALL OF SAME TYPE OF ERROR AT ONCE
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Please enter a valid date.");
+                    if (ex is ArgumentOutOfRangeException)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                    if (ex is FormatException)
+                    {
+                        MessageBox.Show("Please make sure every box is filled out.");
+                        return;
+                    }
+                    else
+                    {
+                        throw;
+                    }
                 }
             }
         }
