@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data;
 using System.Data.OleDb;
 using System.Windows.Forms;
 
@@ -18,6 +17,7 @@ namespace ROTC_Application
         {
             InitializeComponent();
         }
+
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
@@ -49,7 +49,7 @@ namespace ROTC_Application
             int year = Convert.ToInt32(YearBox.Text);//catch format exception
             uint rank = Convert.ToUInt32(RankBox.Text);//catch format exception
             string school = SchoolBox.Text;
-
+            bool error = false;
 
             //-----------------------------------------------------------TODO
             //NEEDS TO BE UPDATED TO MICROSOFT ACCESS DATABASE
@@ -61,21 +61,39 @@ namespace ROTC_Application
             DialogResult DummyCheck = MessageBox.Show(check, "", MessageBoxButtons.YesNo);
             if (DummyCheck == DialogResult.Yes)
             {
-                DateTime myDateTime = new DateTime(year, month, day);
-                OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=rotcDB.accdb;Persist Security Info=True");
-                con.Open();
-                String myString = "INSERT INTO PERSON (LName,FName,School,MsNum,SOC,DOB) VALUES ('" + last + "','" + first + "','" + school + "','" + rank + "','" + socSecurity + "','" + myDateTime + "')";
-                OleDbCommand myCommand = new OleDbCommand(myString, con);
-                myCommand.ExecuteReader();
-                con.Close();
-                MessageBox.Show(first + " " + last + "\nSocSec: xxx-xx-" + socSecurity
-                     + "\nBirthday: " + day + "/" + month + "/" + year + "\nRank: " + rank + "\nSchool: " + school);
+                DateTime myDateTime;
+                try
+                {
+                    myDateTime = new DateTime(year, month, day);
+                    OleDbConnection con = new OleDbConnection(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=rotcDB.accdb;Persist Security Info=True");
+                    con.Open();
+                    String myString = "INSERT INTO PERSON (LName,FName,School,MsNum,SOC,DOB) VALUES ('" + last + "','" + first + "','" + school + "','" + rank + "','" + socSecurity + "','" + myDateTime + "')";
+                    OleDbCommand myCommand = new OleDbCommand(myString, con);
+                    myCommand.ExecuteReader();
+                    con.Close();
+                    MessageBox.Show(first + " " + last + "\nSocSec: xxx-xx-" + socSecurity
+                         + "\nBirthday: " + day + "/" + month + "/" + year + "\nRank: " + rank + "\nSchool: " + school);
 
-                this.Close();
+                    this.Close();
+                }
+                catch (ArgumentOutOfRangeException)
+                {
+                    MessageBox.Show("Please enter a valid date.");
+                }
             }
         }
 
         private void FirstNameBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MonthBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MonthBox_TextChanged_1(object sender, EventArgs e)
         {
 
         }
